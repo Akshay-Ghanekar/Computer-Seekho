@@ -14,136 +14,105 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name = "CourseMaster")
+@Table(name = "Course")
 public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int courseId;
+    private int course_id;
 
-    @Column(name = "course_name", nullable = false)
-    private String courseName;
+    private String course_name;
 
-    @Column(name = "course_description")
-    private String courseDescription;
+    private String course_description;
 
-    @Column(name = "course_duration")
-    private int courseDuration;
+    private int course_duration;
 
-    @Column(name = "course_fees")
-    private int courseFees;
+    private String course_syllabus;
 
-    @Column(name = "course_fees_from")
-    @Temporal(TemporalType.DATE)
-    private Date courseFeesFrom;
+    private String age_grp_type;
 
-    @Column(name = "course_fees_to")
-    @Temporal(TemporalType.DATE)
-    private Date courseFeesTo;
+    private boolean course_is_active;
 
-    @Column(name = "course_syllabus")
-    private String courseSyllabus;
+    private String cover_photo;
+//  @ManyToOne
+//  @JoinColumn(name = "video_id")
+//  private VideoMaster videoMaster;
 
-    @Column(name = "age_grp_type")
-    private String ageGrpType;
-
-    @Column(name = "course_is_active")
-    private boolean courseIsActive;
-
-    @Column(name = "cover_photo")
-    private String coverPhoto;
-
-	public int getCourseId() {
-		return courseId;
+	public int getCourse_id() {
+		return course_id;
 	}
 
-	public void setCourseId(int courseId) {
-		this.courseId = courseId;
+	public void setCourse_id(int course_id) {
+		this.course_id = course_id;
 	}
 
-	public String getCourseName() {
-		return courseName;
+	public String getCourse_name() {
+		return course_name;
 	}
 
-	public void setCourseName(String courseName) {
-		this.courseName = courseName;
+	public void setCourse_name(String course_name) {
+		this.course_name = course_name;
 	}
 
-	public String getCourseDescription() {
-		return courseDescription;
+	public String getCourse_description() {
+		return course_description;
 	}
 
-	public void setCourseDescription(String courseDescription) {
-		this.courseDescription = courseDescription;
+	public void setCourse_description(String course_description) {
+		this.course_description = course_description;
 	}
 
-	public int getCourseDuration() {
-		return courseDuration;
+	public int getCourse_duration() {
+		return course_duration;
 	}
 
-	public void setCourseDuration(int courseDuration) {
-		this.courseDuration = courseDuration;
+	public void setCourse_duration(int course_duration) {
+		this.course_duration = course_duration;
 	}
 
-	public int getCourseFees() {
-		return courseFees;
+	public String getCourse_syllabus() {
+		return course_syllabus;
 	}
 
-	public void setCourseFees(int courseFees) {
-		this.courseFees = courseFees;
+	public void setCourse_syllabus(String course_syllabus) {
+		this.course_syllabus = course_syllabus;
 	}
 
-	public Date getCourseFeesFrom() {
-		return courseFeesFrom;
+	public String getAge_grp_type() {
+		return age_grp_type;
 	}
 
-	public void setCourseFeesFrom(Date courseFeesFrom) {
-		this.courseFeesFrom = courseFeesFrom;
+	public void setAge_grp_type(String age_grp_type) {
+		this.age_grp_type = age_grp_type;
 	}
 
-	public Date getCourseFeesTo() {
-		return courseFeesTo;
+	public boolean isCourse_is_active() {
+		return course_is_active;
 	}
 
-	public void setCourseFeesTo(Date courseFeesTo) {
-		this.courseFeesTo = courseFeesTo;
+	public void setCourse_is_active(boolean course_is_active) {
+		this.course_is_active = course_is_active;
 	}
 
-	public String getCourseSyllabus() {
-		return courseSyllabus;
+	public String getCover_photo() {
+		return cover_photo;
 	}
 
-	public void setCourseSyllabus(String courseSyllabus) {
-		this.courseSyllabus = courseSyllabus;
+	public void setCover_photo(String cover_photo) {
+		this.cover_photo = cover_photo;
 	}
 
-	public String getAgeGrpType() {
-		return ageGrpType;
+	@Override
+	public String toString() {
+		return "Course [course_id=" + course_id + ", course_name=" + course_name + ", course_description="
+				+ course_description + ", course_duration=" + course_duration + ", course_syllabus=" + course_syllabus
+				+ ", age_grp_type=" + age_grp_type + ", course_is_active=" + course_is_active + ", cover_photo="
+				+ cover_photo + "]";
 	}
 
-	public void setAgeGrpType(String ageGrpType) {
-		this.ageGrpType = ageGrpType;
-	}
+	
 
-	public boolean isCourseIsActive() {
-		return courseIsActive;
-	}
 
-	public void setCourseIsActive(boolean courseIsActive) {
-		this.courseIsActive = courseIsActive;
-	}
-
-	public String getCoverPhoto() {
-		return coverPhoto;
-	}
-
-	public void setCoverPhoto(String coverPhoto) {
-		this.coverPhoto = coverPhoto;
-	}
-
-//    @ManyToOne
-//    @JoinColumn(name = "video_id")
-//    private VideoMaster videoMaster;
 
    
 }
