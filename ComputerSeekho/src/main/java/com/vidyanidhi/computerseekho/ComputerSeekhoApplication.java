@@ -1,4 +1,4 @@
-package com.computerseekho;
+package com.vidyanidhi.computerseekho;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.computerseekho.entities;
+package com.vidyanidhi.computerseekho.entities;
 
 
 import java.util.Date;
