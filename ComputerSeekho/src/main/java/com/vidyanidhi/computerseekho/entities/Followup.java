@@ -14,7 +14,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name = "CourseMaster")
+@Table(name = "Followup")
 
 public class Followup {
 
