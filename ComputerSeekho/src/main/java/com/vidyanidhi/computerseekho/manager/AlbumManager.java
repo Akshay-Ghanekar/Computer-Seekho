@@ -1,4 +1,4 @@
-package com.vidyanidhi.computerseekho.services;
+package com.vidyanidhi.computerseekho.manager;
 
 import java.util.List;
 import java.util.Optional;
