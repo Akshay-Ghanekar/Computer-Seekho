@@ -45,8 +45,7 @@ public class Enquiry
 //    @JoinColumn(name="closure_reason_id" , referencedColumnName="id")
 //    private ClosureReasonMaster Closurereasonid;
     
-<<<<<<< HEAD
-=======
+
     @Column(name="closure_reason")
     private String closurereason;
     
@@ -57,9 +56,9 @@ public class Enquiry
     @JoinColumn(name="course_id" , referencedColumnName="id")
     private Course courseid;
 
-    @ManyToOne
-    @JoinColumn(name="staff_id" , referencedColumnName="id")
-    private Staff staffid;
+//    @ManyToOne
+//    @JoinColumn(name="staff_id" , referencedColumnName="id")
+//    private Staff staffid;
     
     @Column(name="student_name")
     private String studentname;
@@ -135,13 +134,13 @@ public class Enquiry
 		this.enquirerquery = enquirerquery;
 	}
 
-	public ClosureReasonMaster getClosurereasonid() {
-		return Closurereasonid;
-	}
+//	public ClosureReasonMaster getClosurereasonid() {
+//		return Closurereasonid;
+//	}
 
-	public void setClosurereasonid(ClosureReasonMaster closurereasonid) {
-		Closurereasonid = closurereasonid;
-	}
+//	public void setClosurereasonid(ClosureReasonMaster closurereasonid) {
+//		Closurereasonid = closurereasonid;
+//	}
 
 	public String getClosurereason() {
 		return closurereason;
@@ -167,13 +166,13 @@ public class Enquiry
 		this.courseid = courseid;
 	}
 
-	public Staff getStaffid() {
-		return staffid;
-	}
-
-	public void setStaffid(Staff staffid) {
-		this.staffid = staffid;
-	}
+//	public Staff getStaffid() {
+//		return staffid;
+//	}
+//
+//	public void setStaffid(Staff staffid) {
+//		this.staffid = staffid;
+//	}
 
 	public String getStudentname() {
 		return studentname;
@@ -199,5 +198,4 @@ public class Enquiry
 		this.followupdate = followupdate;
 	}
 	
->>>>>>> branch 'subbranch' of https://github.com/swapnilD31/ComputerSeekho.git
 }

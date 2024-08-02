@@ -1,4 +1,4 @@
-package com.vidyanidhi.computerseekho.manager;
+package com.vidyanidhi.computerseekho.services;
 
 import java.util.*;
 

@@ -7,10 +7,9 @@ package com.vidyanidhi.computerseekho.services;
 	import org.springframework.stereotype.Service;
 
 import com.vidyanidhi.computerseekho.entities.Album;
-import com.vidyanidhi.computerseekho.manager.AlbumManager;
 
 	@Service
-	public class AlbumService implements AlbumManager{
+	public class AlbumManagerImpl implements AlbumManager{
 		
 		@Autowired
 		AlbumRepository repository;
