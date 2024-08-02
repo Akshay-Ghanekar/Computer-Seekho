@@ -22,13 +22,13 @@ public class Followup {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int followupid;
 	
-	@ManyToOne
-    @JoinColumn(name = "enquiry_id" , referencedColumnName="id")
-	private Enquiry enquiryid;
+//	@ManyToOne
+//    @JoinColumn(name = "enquiry_id" , referencedColumnName="id")
+//	private Enquiry enquiryid;
 	
-	@ManyToOne
-    @JoinColumn(name = "staff_id" , referencedColumnName="id")
-	private StaffMaster staffid;
+//	@ManyToOne
+//    @JoinColumn(name = "staff_id" , referencedColumnName="id")
+//	private StaffMaster staffid;
 	
 	@Column(name = "followup_date")
     @Temporal(TemporalType.DATE)
@@ -50,21 +50,21 @@ public class Followup {
 		this.followupid = followupid;
 	}
 	
-	public Enquiry getEnquiryid() {
-		return enquiryid;
-	}
-
-	public void setEnquiryid(Enquiry enquiryid) {
-		this.enquiryid = enquiryid;
-	}
+//	public Enquiry getEnquiryid() {
+//		return enquiryid;
+//	}
+//
+//	public void setEnquiryid(Enquiry enquiryid) {
+//		this.enquiryid = enquiryid;
+//	}
 	
-	public StaffMaster getStaffid() {
-		return staffid;
-	}
-
-	public void setStaffid(StaffMaster staffid) {
-		this.staffid = staffid;
-	}
+//	public StaffMaster getStaffid() {
+//		return staffid;
+//	}
+//
+//	public void setStaffid(StaffMaster staffid) {
+//		this.staffid = staffid;
+//	}
 	
 	public Date getFollowupdate() {
 		return followupdate;

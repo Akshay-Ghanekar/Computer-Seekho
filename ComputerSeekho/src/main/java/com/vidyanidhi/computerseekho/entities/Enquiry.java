@@ -12,7 +12,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name = "CourseMaster")
+@Table(name = "Enquiry")
 public class Enquiry 
 {
 	@Id
@@ -41,119 +41,8 @@ public class Enquiry
     @Column(name = "enquirer_query")
     private String enquirerquery;
     
-    @ManyToOne
-    @JoinColumn(name="closure_reason_id" , referencedColumnName="id")
-    private ClosureReasonMaster Closurereasonid;
+//    @ManyToOne
+//    @JoinColumn(name="closure_reason_id" , referencedColumnName="id")
+//    private ClosureReasonMaster Closurereasonid;
     
-    
-    
-    
-    
-    
-    
-    
-
-    @Column(name = "course_fees_to")
-    @Temporal(TemporalType.DATE)
-    private Date courseFeesTo;
-    
-    //ClosureReasonID
-    
-    @Column(name = "closure_reason")
-    private String closurereason;
-
-    @Column(name = "enquiry_processed_flag")
-    private boolean enquiryprocessedflag;
-
-    @Column(name = "cover_photo")
-    private String coverPhoto;
-
-	public int getCourseId() {
-		return courseId;
-	}
-
-	public void setCourseId(int courseId) {
-		this.courseId = courseId;
-	}
-
-	public String getCourseName() {
-		return courseName;
-	}
-
-	public void setCourseName(String courseName) {
-		this.courseName = courseName;
-	}
-
-	public String getCourseDescription() {
-		return courseDescription;
-	}
-
-	public void setCourseDescription(String courseDescription) {
-		this.courseDescription = courseDescription;
-	}
-
-	public int getCourseDuration() {
-		return courseDuration;
-	}
-
-	public void setCourseDuration(int courseDuration) {
-		this.courseDuration = courseDuration;
-	}
-
-	public int getCourseFees() {
-		return courseFees;
-	}
-
-	public void setCourseFees(int courseFees) {
-		this.courseFees = courseFees;
-	}
-
-	public Date getCourseFeesFrom() {
-		return courseFeesFrom;
-	}
-
-	public void setCourseFeesFrom(Date courseFeesFrom) {
-		this.courseFeesFrom = courseFeesFrom;
-	}
-
-	public Date getCourseFeesTo() {
-		return courseFeesTo;
-	}
-
-	public void setCourseFeesTo(Date courseFeesTo) {
-		this.courseFeesTo = courseFeesTo;
-	}
-
-	public String getCourseSyllabus() {
-		return courseSyllabus;
-	}
-
-	public void setCourseSyllabus(String courseSyllabus) {
-		this.courseSyllabus = courseSyllabus;
-	}
-
-	public String getAgeGrpType() {
-		return ageGrpType;
-	}
-
-	public void setAgeGrpType(String ageGrpType) {
-		this.ageGrpType = ageGrpType;
-	}
-
-	public boolean isCourseIsActive() {
-		return courseIsActive;
-	}
-
-	public void setCourseIsActive(boolean courseIsActive) {
-		this.courseIsActive = courseIsActive;
-	}
-
-	public String getCoverPhoto() {
-		return coverPhoto;
-	}
-
-	public void setCoverPhoto(String coverPhoto) {
-		this.coverPhoto = coverPhoto;
-	}
-
 }
