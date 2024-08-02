@@ -17,4 +17,6 @@ public class ComputerSeekhoApplication {
 		SpringApplication.run(ComputerSeekhoApplication.class, args);
 	}
 
+	
+	
 }
