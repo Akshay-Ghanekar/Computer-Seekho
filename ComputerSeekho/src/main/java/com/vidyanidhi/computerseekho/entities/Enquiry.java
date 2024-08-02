@@ -45,115 +45,156 @@ public class Enquiry
     @JoinColumn(name="closure_reason_id" , referencedColumnName="id")
     private ClosureReasonMaster Closurereasonid;
     
-    
-    
-    
-    
-    
-    
-    
-
-    @Column(name = "course_fees_to")
-    @Temporal(TemporalType.DATE)
-    private Date courseFeesTo;
-    
-    //ClosureReasonID
-    
-    @Column(name = "closure_reason")
+    @Column(name="closure_reason")
     private String closurereason;
-
-    @Column(name = "enquiry_processed_flag")
+    
+    @Column(name="enquiry_processed_flag")
     private boolean enquiryprocessedflag;
+    
+    @ManyToOne
+    @JoinColumn(name="course_id" , referencedColumnName="id")
+    private Course courseid;
 
-    @Column(name = "cover_photo")
-    private String coverPhoto;
+    @ManyToOne
+    @JoinColumn(name="staff_id" , referencedColumnName="id")
+    private Staff staffid;
+    
+    @Column(name="student_name")
+    private String studentname;
+    
+    @Column(name="enquiry_counter")
+    private int enquirycounter;
+    
+    @Column(name = "followup_date")
+    @Temporal(TemporalType.DATE)
+    private Date followupdate;
 
-	public int getCourseId() {
-		return courseId;
+	public int getEnquiryId() {
+		return enquiryId;
 	}
 
-	public void setCourseId(int courseId) {
-		this.courseId = courseId;
+	public void setEnquiryId(int enquiryId) {
+		this.enquiryId = enquiryId;
 	}
 
-	public String getCourseName() {
-		return courseName;
+	public String getEnquirerName() {
+		return enquirerName;
 	}
 
-	public void setCourseName(String courseName) {
-		this.courseName = courseName;
+	public void setEnquirerName(String enquirerName) {
+		this.enquirerName = enquirerName;
 	}
 
-	public String getCourseDescription() {
-		return courseDescription;
+	public String getEnquireraddress() {
+		return enquireraddress;
 	}
 
-	public void setCourseDescription(String courseDescription) {
-		this.courseDescription = courseDescription;
+	public void setEnquireraddress(String enquireraddress) {
+		this.enquireraddress = enquireraddress;
 	}
 
-	public int getCourseDuration() {
-		return courseDuration;
+	public int getEnquirermobile() {
+		return enquirermobile;
 	}
 
-	public void setCourseDuration(int courseDuration) {
-		this.courseDuration = courseDuration;
+	public void setEnquirermobile(int enquirermobile) {
+		this.enquirermobile = enquirermobile;
 	}
 
-	public int getCourseFees() {
-		return courseFees;
+	public int getEnquireralternatemobile() {
+		return enquireralternatemobile;
 	}
 
-	public void setCourseFees(int courseFees) {
-		this.courseFees = courseFees;
+	public void setEnquireralternatemobile(int enquireralternatemobile) {
+		this.enquireralternatemobile = enquireralternatemobile;
 	}
 
-	public Date getCourseFeesFrom() {
-		return courseFeesFrom;
+	public String getEnquireremailid() {
+		return enquireremailid;
 	}
 
-	public void setCourseFeesFrom(Date courseFeesFrom) {
-		this.courseFeesFrom = courseFeesFrom;
+	public void setEnquireremailid(String enquireremailid) {
+		this.enquireremailid = enquireremailid;
 	}
 
-	public Date getCourseFeesTo() {
-		return courseFeesTo;
+	public Date getEnquirydate() {
+		return enquirydate;
 	}
 
-	public void setCourseFeesTo(Date courseFeesTo) {
-		this.courseFeesTo = courseFeesTo;
+	public void setEnquirydate(Date enquirydate) {
+		this.enquirydate = enquirydate;
 	}
 
-	public String getCourseSyllabus() {
-		return courseSyllabus;
+	public String getEnquirerquery() {
+		return enquirerquery;
 	}
 
-	public void setCourseSyllabus(String courseSyllabus) {
-		this.courseSyllabus = courseSyllabus;
+	public void setEnquirerquery(String enquirerquery) {
+		this.enquirerquery = enquirerquery;
 	}
 
-	public String getAgeGrpType() {
-		return ageGrpType;
+	public ClosureReasonMaster getClosurereasonid() {
+		return Closurereasonid;
 	}
 
-	public void setAgeGrpType(String ageGrpType) {
-		this.ageGrpType = ageGrpType;
+	public void setClosurereasonid(ClosureReasonMaster closurereasonid) {
+		Closurereasonid = closurereasonid;
 	}
 
-	public boolean isCourseIsActive() {
-		return courseIsActive;
+	public String getClosurereason() {
+		return closurereason;
 	}
 
-	public void setCourseIsActive(boolean courseIsActive) {
-		this.courseIsActive = courseIsActive;
+	public void setClosurereason(String closurereason) {
+		this.closurereason = closurereason;
 	}
 
-	public String getCoverPhoto() {
-		return coverPhoto;
+	public boolean isEnquiryprocessedflag() {
+		return enquiryprocessedflag;
 	}
 
-	public void setCoverPhoto(String coverPhoto) {
-		this.coverPhoto = coverPhoto;
+	public void setEnquiryprocessedflag(boolean enquiryprocessedflag) {
+		this.enquiryprocessedflag = enquiryprocessedflag;
 	}
 
+	public Course getCourseid() {
+		return courseid;
+	}
+
+	public void setCourseid(Course courseid) {
+		this.courseid = courseid;
+	}
+
+	public Staff getStaffid() {
+		return staffid;
+	}
+
+	public void setStaffid(Staff staffid) {
+		this.staffid = staffid;
+	}
+
+	public String getStudentname() {
+		return studentname;
+	}
+
+	public void setStudentname(String studentname) {
+		this.studentname = studentname;
+	}
+
+	public int getEnquirycounter() {
+		return enquirycounter;
+	}
+
+	public void setEnquirycounter(int enquirycounter) {
+		this.enquirycounter = enquirycounter;
+	}
+
+	public Date getFollowupdate() {
+		return followupdate;
+	}
+
+	public void setFollowupdate(Date followupdate) {
+		this.followupdate = followupdate;
+	}
+	
 }
