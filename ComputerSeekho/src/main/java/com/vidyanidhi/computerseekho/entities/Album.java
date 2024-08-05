@@ -84,9 +84,4 @@ public class Album {
 	public void setAlbumIsActive(boolean album_is_active) {
 		this.album_is_active = album_is_active;
 	}
-
-	public Object isAlbum_is_active() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
