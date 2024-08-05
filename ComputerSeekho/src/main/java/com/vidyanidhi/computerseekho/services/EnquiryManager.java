@@ -2,9 +2,11 @@ package com.vidyanidhi.computerseekho.services;
 
 import java.util.*;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import com.vidyanidhi.computerseekho.entities.Enquiry;
+
 
 public interface EnquiryManager {
 	public void Formsubmit(@RequestBody Enquiry enquiry);

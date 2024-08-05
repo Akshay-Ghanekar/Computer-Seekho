@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vidyanidhi.computerseekho.entities.Image;
-import com.vidyanidhi.computerseekho.services.ImageService;
+import com.vidyanidhi.computerseekho.services.ImageManager;
 
 @RestController
 @CrossOrigin("http://127.0.0.1:*")
 public class ImageController {
 	@Autowired
-	ImageService service;
+	ImageManager service;
 
 	@GetMapping(value = "api/getImage")
 	public List<Image> getImages() {

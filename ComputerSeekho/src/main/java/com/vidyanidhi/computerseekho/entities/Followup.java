@@ -15,41 +15,38 @@ import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "Followup")
-
 public class Followup {
 
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int followupid;
-	
-	@ManyToOne
-    @JoinColumn(name = "enquiry_id" , referencedColumnName="id")
-	private Enquiry enquiryid;
-	
-	@ManyToOne
-    @JoinColumn(name = "staff_id" , referencedColumnName="id")
-	private Staff staffid;
-	
-	@Column(name = "followup_date")
+
+    @ManyToOne
+    @JoinColumn(name = "enquiry_id",referencedColumnName ="enquiryId")
+    private Enquiry enquiryid;
+
+    @ManyToOne
+    @JoinColumn(name = "staff_id", referencedColumnName ="staff_id")
+    private Staff staffid;
+
+    @Column(name = "followup_date")
     @Temporal(TemporalType.DATE)
     private Date followupdate;
-	
-	@Column(name="followup_msg")
-	private String followupmsg;
-	
-	@Column(name="is_active")
-	private boolean isactive;
-	
-	public int getFollowupid() 
-	{
+
+    @Column(name="followup_msg")
+    private String followupmsg;
+
+    @Column(name="is_active")
+    private boolean isactive;
+
+	public int getFollowupid() {
 		return followupid;
 	}
 
-	public void setFollowupid(int followupid) 
-	{
+	public void setFollowupid(int followupid) {
 		this.followupid = followupid;
 	}
-	
+
 	public Enquiry getEnquiryid() {
 		return enquiryid;
 	}
@@ -57,7 +54,7 @@ public class Followup {
 	public void setEnquiryid(Enquiry enquiryid) {
 		this.enquiryid = enquiryid;
 	}
-	
+
 	public Staff getStaffid() {
 		return staffid;
 	}
@@ -65,7 +62,7 @@ public class Followup {
 	public void setStaffid(Staff staffid) {
 		this.staffid = staffid;
 	}
-	
+
 	public Date getFollowupdate() {
 		return followupdate;
 	}
@@ -73,7 +70,7 @@ public class Followup {
 	public void setFollowupdate(Date followupdate) {
 		this.followupdate = followupdate;
 	}
-	
+
 	public String getFollowupmsg() {
 		return followupmsg;
 	}
@@ -81,12 +78,14 @@ public class Followup {
 	public void setFollowupmsg(String followupmsg) {
 		this.followupmsg = followupmsg;
 	}
-	
-	public boolean getIsactive() {
+
+	public boolean isIsactive() {
 		return isactive;
 	}
 
 	public void setIsactive(boolean isactive) {
 		this.isactive = isactive;
 	}
+
+    
 }

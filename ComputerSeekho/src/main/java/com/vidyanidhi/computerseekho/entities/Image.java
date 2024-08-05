@@ -12,22 +12,22 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "ImageMaster")
 public class Image {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int image_id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int image_id;
 
-	@Column(name = "image_path", nullable = false)
-	private String image_path;
+    @Column(name = "image_path", nullable = false)
+    private String image_path;
 
-	@ManyToOne
-	@JoinColumn(name = "album_id", referencedColumnName = "id")
-	private Album album_id;
+    @ManyToOne
+    @JoinColumn(name = "album_id", referencedColumnName = "album_id")
+    private Album album_id;
 
-	@Column(name = "is_album_cover")
-	private boolean is_album_cover;
+    @Column(name = "is_album_cover")
+    private boolean is_album_cover;
 
-	@Column(name = "image_is_active")
-	private boolean image_is_active;
+    @Column(name = "image_is_active")
+    private boolean image_is_active;
 
 	public int getImage_id() {
 		return image_id;
@@ -69,5 +69,5 @@ public class Image {
 		this.image_is_active = image_is_active;
 	}
 
-	
+    
 }

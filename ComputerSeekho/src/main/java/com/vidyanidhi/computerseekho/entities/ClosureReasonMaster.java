@@ -5,31 +5,32 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "ClosureReasonMaster")
 public class ClosureReasonMaster {
-	
-	
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Closure_ReasonID;
-	
-	@Column(name="Closure_Reason_desc",nullable=false)
-	private String Closure_Reason_desc;
+    private int closure_reason_id;
 
-	public int getClosure_ReasonID() {
-		return Closure_ReasonID;
-	}
+    @Column(name = "closure_reason_desc", nullable = false)
+    private String closure_reason_desc;
 
-	public void setClosure_ReasonID(int closure_ReasonID) {
-		Closure_ReasonID = closure_ReasonID;
-	}
+    // Getters and Setters
+    public int getClosure_reason_id() {
+        return closure_reason_id;
+    }
 
-	public String getClosure_Reason_desc() {
-		return Closure_Reason_desc;
-	}
+    public void setClosure_reason_id(int closure_reason_id) {
+        this.closure_reason_id = closure_reason_id;
+    }
 
-	public void setClosure_Reason_desc(String closure_Reason_desc) {
-		Closure_Reason_desc = closure_Reason_desc;
-	}
+    public String getClosure_reason_desc() {
+        return closure_reason_desc;
+    }
+
+    public void setClosure_reason_desc(String closure_reason_desc) {
+        this.closure_reason_desc = closure_reason_desc;
+    }
 }

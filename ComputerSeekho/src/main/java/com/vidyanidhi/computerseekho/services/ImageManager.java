@@ -7,8 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.vidyanidhi.computerseekho.entities.Image;
 
-@Service
-public interface ImageService {
+public interface ImageManager {
 	void insert(Image image);
 
 	List<Image> getAll();

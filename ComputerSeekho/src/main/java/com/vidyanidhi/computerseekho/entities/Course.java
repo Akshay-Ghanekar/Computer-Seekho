@@ -1,7 +1,5 @@
 package com.vidyanidhi.computerseekho.entities;
 
-
-import java.util.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,8 +8,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "Course")
@@ -21,22 +17,30 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int course_id;
 
+    @Column(name = "course_name")
     private String course_name;
 
+    @Column(name = "course_description")
     private String course_description;
 
+    @Column(name = "course_duration")
     private int course_duration;
 
+    @Column(name = "course_syllabus")
     private String course_syllabus;
 
+    @Column(name = "age_grp_type")
     private String age_grp_type;
 
+    @Column(name = "course_is_active")
     private boolean course_is_active;
 
+    @Column(name = "cover_photo")
     private String cover_photo;
-//  @ManyToOne
-//  @JoinColumn(name = "video_id")
-//  private VideoMaster videoMaster;
+
+    @ManyToOne
+    @JoinColumn(name = "video_id", referencedColumnName ="video_id")
+    private Video video_id;
 
 	public int getCourse_id() {
 		return course_id;
@@ -102,17 +106,14 @@ public class Course {
 		this.cover_photo = cover_photo;
 	}
 
-	@Override
-	public String toString() {
-		return "Course [course_id=" + course_id + ", course_name=" + course_name + ", course_description="
-				+ course_description + ", course_duration=" + course_duration + ", course_syllabus=" + course_syllabus
-				+ ", age_grp_type=" + age_grp_type + ", course_is_active=" + course_is_active + ", cover_photo="
-				+ cover_photo + "]";
+	public Video getVideo_id() {
+		return video_id;
+	}
+
+	public void setVideo_id(Video video_id) {
+		this.video_id = video_id;
 	}
 
 	
-
-
-
-   
+    
 }

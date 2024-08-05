@@ -10,7 +10,7 @@ import com.vidyanidhi.computerseekho.entities.Image;
 import com.vidyanidhi.computerseekho.repositories.ImageRepository;
 
 @Service
-public class ImageServiceImpl implements ImageService {
+public class ImageManagerImpl implements ImageManager {
 	@Autowired
 	private ImageRepository i_repository;
 

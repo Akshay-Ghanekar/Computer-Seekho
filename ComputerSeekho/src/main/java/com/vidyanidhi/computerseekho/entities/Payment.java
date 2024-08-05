@@ -1,66 +1,104 @@
 package com.vidyanidhi.computerseekho.entities;
-import java.sql.*;
 
+import java.sql.Date;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
+@Table(name = "Payment")
 public class Payment {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int payment_id;
-	private PaymentMaster payment_typeID;
-	private Date payment_date;
-	private Student student_id;
-	private Course course_id;
-	private Batch batch_id;
-	private double amount;
-	public int getPayment_id() {
-		return payment_id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int paymentId;
+
+    @ManyToOne
+    @JoinColumn(name = "payment_type_id", referencedColumnName = "payment_type_id")
+    private PaymentType paymentType;
+
+    @Column(name = "payment_date")
+    @Temporal(TemporalType.DATE)
+    private Date paymentDate;
+
+    @ManyToOne
+    @JoinColumn(name = "student_id", referencedColumnName ="student_id")
+    private Student student;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id",referencedColumnName ="course_id")
+    private Course course;
+
+    @ManyToOne
+    @JoinColumn(name = "batch_id", referencedColumnName ="batch_id")
+    private Batch batch;
+
+    @Column(name = "amount")
+    private double amount;
+
+	public int getPaymentId() {
+		return paymentId;
 	}
-	public void setPayment_id(int payment_id) {
-		this.payment_id = payment_id;
+
+	public void setPaymentId(int paymentId) {
+		this.paymentId = paymentId;
 	}
-	public PaymentMaster getPayment_typeID() {
-		return payment_typeID;
+
+	public PaymentType getPaymentType() {
+		return paymentType;
 	}
-	public void setPayment_typeID(PaymentMaster payment_typeID) {
-		this.payment_typeID = payment_typeID;
+
+	public void setPaymentType(PaymentType paymentType) {
+		this.paymentType = paymentType;
 	}
-	public Date getPayment_date() {
-		return payment_date;
+
+	public Date getPaymentDate() {
+		return paymentDate;
 	}
-	public void setPayment_date(Date payment_date) {
-		this.payment_date = payment_date;
+
+	public void setPaymentDate(Date paymentDate) {
+		this.paymentDate = paymentDate;
 	}
-	public Student getStudent_id() {
-		return student_id;
+
+	public Student getStudent() {
+		return student;
 	}
-	public void setStudent_id(Student student_id) {
-		this.student_id = student_id;
+
+	public void setStudent(Student student) {
+		this.student = student;
 	}
-	public Course getCourse_id() {
-		return course_id;
+
+	public Course getCourse() {
+		return course;
 	}
-	public void setCourse_id(Course course_id) {
-		this.course_id = course_id;
+
+	public void setCourse(Course course) {
+		this.course = course;
 	}
-	public Batch getBatch_id() {
-		return batch_id;
+
+	public Batch getBatch() {
+		return batch;
 	}
-	public void setBatch_id(Batch batch_id) {
-		this.batch_id = batch_id;
+
+	public void setBatch(Batch batch) {
+		this.batch = batch;
 	}
+
 	public double getAmount() {
 		return amount;
 	}
+
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	
-	
-	
+
+    
 }

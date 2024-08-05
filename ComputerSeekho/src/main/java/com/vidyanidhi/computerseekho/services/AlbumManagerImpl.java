@@ -46,7 +46,7 @@ public class AlbumManagerImpl implements AlbumManager {
 	@Override
 	public void update(Album album, int id) {
 		// TODO Auto-generated method stub
-		repository.update(album.getAlbumName(), album.getAlbumDescription(), album.getAlbumIsActive(), id);
+		repository.update(album.getAlbum_name(), album.getAlbum_description(), album.getAlbum_is_active(), id);
 	}
 
 	// @Override

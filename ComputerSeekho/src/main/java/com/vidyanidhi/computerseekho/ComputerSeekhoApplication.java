@@ -8,9 +8,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
-@ComponentScan(basePackages = "com.vidyanidhi.computerseekho.*")
-@EntityScan(basePackages = "com.vidyanidhi.computerseekho.*")
-@EnableJpaRepositories(basePackages = "com.vidyanidhi.computerseekho.*")
+@ComponentScan(basePackages = "com.vidyanidhi.computerseekho")
+@EntityScan(basePackages = "com.vidyanidhi.computerseekho")
+@EnableJpaRepositories(basePackages = "com.vidyanidhi.computerseekho")
 public class ComputerSeekhoApplication {
 
 	public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package com.vidyanidhi.computerseekho.entities;
+
 import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,9 +15,9 @@ import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "Enquiry")
-public class Enquiry 
-{
-	@Id
+public class Enquiry {
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int enquiryId;
 
@@ -23,52 +25,51 @@ public class Enquiry
     private String enquirerName;
 
     @Column(name = "enquirer_address")
-    private String enquireraddress;
+    private String enquirerAddress;
 
     @Column(name = "enquirer_mobile")
-    private int enquirermobile;
-    
+    private int enquirerMobile;
+
     @Column(name = "enquirer_alternate_mobile")
-    private int enquireralternatemobile;
-    
+    private int enquirerAlternateMobile;
+
     @Column(name = "enquirer_emailid")
-    private String enquireremailid;
+    private String enquirerEmailId;
 
     @Column(name = "enquiry_date")
     @Temporal(TemporalType.DATE)
-    private Date enquirydate;
-    
+    private Date enquiryDate;
+
     @Column(name = "enquirer_query")
-    private String enquirerquery;
-    
+    private String enquirerQuery;
+
     @ManyToOne
-    @JoinColumn(name="closure_reason_id" , referencedColumnName="id")
-    private ClosureReasonMaster Closurereasonid;
-    
+    @JoinColumn(name="closure_reason_id", referencedColumnName ="closure_reason_id")
+    private ClosureReasonMaster closureReasonID;
 
     @Column(name="closure_reason")
-    private String closurereason;
-    
+    private String closureReason;
+
     @Column(name="enquiry_processed_flag")
-    private boolean enquiryprocessedflag;
-    
-    @ManyToOne
-    @JoinColumn(name="course_id" , referencedColumnName="id")
-    private Course courseid;
+    private boolean enquiryProcessedFlag;
 
     @ManyToOne
-    @JoinColumn(name="staff_id" , referencedColumnName="id")
-    private Staff staffid;
-    
+    @JoinColumn(name="course_id", referencedColumnName ="course_id")
+    private Course courseId;
+
+    @ManyToOne
+    @JoinColumn(name="staff_id",referencedColumnName ="staff_id")
+    private Staff staffId;
+
     @Column(name="student_name")
-    private String studentname;
-    
+    private String studentName;
+
     @Column(name="enquiry_counter")
-    private int enquirycounter;
-    
+    private int enquiryCounter;
+
     @Column(name = "followup_date")
     @Temporal(TemporalType.DATE)
-    private Date followupdate;
+    private Date followUpDate;
 
 	public int getEnquiryId() {
 		return enquiryId;
@@ -86,116 +87,117 @@ public class Enquiry
 		this.enquirerName = enquirerName;
 	}
 
-	public String getEnquireraddress() {
-		return enquireraddress;
+	public String getEnquirerAddress() {
+		return enquirerAddress;
 	}
 
-	public void setEnquireraddress(String enquireraddress) {
-		this.enquireraddress = enquireraddress;
+	public void setEnquirerAddress(String enquirerAddress) {
+		this.enquirerAddress = enquirerAddress;
 	}
 
-	public int getEnquirermobile() {
-		return enquirermobile;
+	public int getEnquirerMobile() {
+		return enquirerMobile;
 	}
 
-	public void setEnquirermobile(int enquirermobile) {
-		this.enquirermobile = enquirermobile;
+	public void setEnquirerMobile(int enquirerMobile) {
+		this.enquirerMobile = enquirerMobile;
 	}
 
-	public int getEnquireralternatemobile() {
-		return enquireralternatemobile;
+	public int getEnquirerAlternateMobile() {
+		return enquirerAlternateMobile;
 	}
 
-	public void setEnquireralternatemobile(int enquireralternatemobile) {
-		this.enquireralternatemobile = enquireralternatemobile;
+	public void setEnquirerAlternateMobile(int enquirerAlternateMobile) {
+		this.enquirerAlternateMobile = enquirerAlternateMobile;
 	}
 
-	public String getEnquireremailid() {
-		return enquireremailid;
+	public String getEnquirerEmailId() {
+		return enquirerEmailId;
 	}
 
-	public void setEnquireremailid(String enquireremailid) {
-		this.enquireremailid = enquireremailid;
+	public void setEnquirerEmailId(String enquirerEmailId) {
+		this.enquirerEmailId = enquirerEmailId;
 	}
 
-	public Date getEnquirydate() {
-		return enquirydate;
+	public Date getEnquiryDate() {
+		return enquiryDate;
 	}
 
-	public void setEnquirydate(Date enquirydate) {
-		this.enquirydate = enquirydate;
+	public void setEnquiryDate(Date enquiryDate) {
+		this.enquiryDate = enquiryDate;
 	}
 
-	public String getEnquirerquery() {
-		return enquirerquery;
+	public String getEnquirerQuery() {
+		return enquirerQuery;
 	}
 
-	public void setEnquirerquery(String enquirerquery) {
-		this.enquirerquery = enquirerquery;
+	public void setEnquirerQuery(String enquirerQuery) {
+		this.enquirerQuery = enquirerQuery;
 	}
 
-	public ClosureReasonMaster getClosurereasonid() {
-		return Closurereasonid;
+	public ClosureReasonMaster getClosureReasonID() {
+		return closureReasonID;
 	}
 
-	public void setClosurereasonid(ClosureReasonMaster closurereasonid) {
-		Closurereasonid = closurereasonid;
+	public void setClosureReasonID(ClosureReasonMaster closureReasonID) {
+		this.closureReasonID = closureReasonID;
 	}
 
-	public String getClosurereason() {
-		return closurereason;
+	public String getClosureReason() {
+		return closureReason;
 	}
 
-	public void setClosurereason(String closurereason) {
-		this.closurereason = closurereason;
+	public void setClosureReason(String closureReason) {
+		this.closureReason = closureReason;
 	}
 
-	public boolean isEnquiryprocessedflag() {
-		return enquiryprocessedflag;
+	public boolean isEnquiryProcessedFlag() {
+		return enquiryProcessedFlag;
 	}
 
-	public void setEnquiryprocessedflag(boolean enquiryprocessedflag) {
-		this.enquiryprocessedflag = enquiryprocessedflag;
+	public void setEnquiryProcessedFlag(boolean enquiryProcessedFlag) {
+		this.enquiryProcessedFlag = enquiryProcessedFlag;
 	}
 
-	public Course getCourseid() {
-		return courseid;
+	public Course getCourseId() {
+		return courseId;
 	}
 
-	public void setCourseid(Course courseid) {
-		this.courseid = courseid;
+	public void setCourseId(Course courseId) {
+		this.courseId = courseId;
 	}
 
-	public Staff getStaffid() {
-		return staffid;
+	public Staff getStaffId() {
+		return staffId;
 	}
 
-	public void setStaffid(Staff staffid) {
-		this.staffid = staffid;
+	public void setStaffId(Staff staffId) {
+		this.staffId = staffId;
 	}
 
-	public String getStudentname() {
-		return studentname;
+	public String getStudentName() {
+		return studentName;
 	}
 
-	public void setStudentname(String studentname) {
-		this.studentname = studentname;
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 
-	public int getEnquirycounter() {
-		return enquirycounter;
+	public int getEnquiryCounter() {
+		return enquiryCounter;
 	}
 
-	public void setEnquirycounter(int enquirycounter) {
-		this.enquirycounter = enquirycounter;
+	public void setEnquiryCounter(int enquiryCounter) {
+		this.enquiryCounter = enquiryCounter;
 	}
 
-	public Date getFollowupdate() {
-		return followupdate;
+	public Date getFollowUpDate() {
+		return followUpDate;
 	}
 
-	public void setFollowupdate(Date followupdate) {
-		this.followupdate = followupdate;
+	public void setFollowUpDate(Date followUpDate) {
+		this.followUpDate = followUpDate;
 	}
+
 	
 }

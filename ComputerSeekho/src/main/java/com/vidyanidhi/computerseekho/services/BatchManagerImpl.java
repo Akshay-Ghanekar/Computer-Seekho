@@ -3,10 +3,12 @@ package com.vidyanidhi.computerseekho.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.vidyanidhi.computerseekho.entities.Batch;
 import com.vidyanidhi.computerseekho.repositories.BatchRepository;
 
+@Service
 public class BatchManagerImpl implements BatchManager {
 
 	@Autowired
