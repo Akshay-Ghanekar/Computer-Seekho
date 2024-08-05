@@ -1,12 +1,16 @@
 package com.vidyanidhi.computerseekho.entities;
 
 import java.sql.Date;
+import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -35,6 +39,14 @@ public class Album {
 
 	@Column(name = "album_is_active")
 	private boolean album_is_active;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "album_id", referencedColumnName = "album_id")
+	private Set<Image> images;
+	
+	public void setImages(Set<Image> images) {
+		this.images = images;
+	}
 
 	public int getAlbumId() {
 		return album_id;
@@ -85,8 +97,13 @@ public class Album {
 		this.album_is_active = album_is_active;
 	}
 
-	public Object isAlbum_is_active() {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean isAlbum_is_active() {
+		return album_is_active;
 	}
+
+	public Album() {
+		super();
+	}
+
+	
 }

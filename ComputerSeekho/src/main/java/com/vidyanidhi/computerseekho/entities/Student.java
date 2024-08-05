@@ -14,25 +14,33 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int student_id;
 	
+	@Column(nullable = false)
 	private String  student_name ;
 	
+	@Column(nullable = false)
 	private String student_address;
 	
+	@Column(nullable = false)
 	private String student_gender;
 	
+	@Column(nullable = false)
 	private String photo_url;
 	
+	@Column(nullable = false)
 	private Date student_dob;
 	
+	@Column(nullable = false)
 	private String  student_qualification;
 	
+	@Column(nullable = false)
 	private String  student_mobile;
 	
-	//private Course course_fee;
+	@Column(nullable = false)
+	private Course course_fee;
 
-	//private Batch batch_id;
+	private Batch batch_id;
 	
-	//private int course_id;
+	private int course_id;
 	
 	private String student_password;
 	
