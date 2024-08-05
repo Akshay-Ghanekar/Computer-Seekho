@@ -16,8 +16,8 @@ public class Video {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int video_id;
 
-    @Column(name = "video_path", nullable = false)
-    private String video_path;
+    @Column(name = "video_url", nullable = false)
+    private String video_url;
 
     @ManyToOne
     @JoinColumn(name = "album_id", referencedColumnName = "album_id")
@@ -38,11 +38,11 @@ public class Video {
 	}
 
 	public String getVideo_path() {
-		return video_path;
+		return video_url;
 	}
 
 	public void setVideo_path(String video_path) {
-		this.video_path = video_path;
+		this.video_url = video_path;
 	}
 
 	public Album getAlbum_id() {

@@ -20,6 +20,8 @@ public class Staff {
 
     @Column(name = "staff_name")
     private String staff_name;
+    
+    private String photo_url;
 
     @Column(name = "staff_role")
     private String staff_role;
@@ -29,8 +31,36 @@ public class Staff {
 
     @Column(name = "staff_email")
     private String staff_email;
+    
+    private String staff_username;
+	private String staff_password;
 
-    @OneToMany(mappedBy = "staffid", cascade = CascadeType.ALL)
+
+    public String getPhoto_url() {
+		return photo_url;
+	}
+
+	public void setPhoto_url(String photo_url) {
+		this.photo_url = photo_url;
+	}
+
+	public String getStaff_username() {
+		return staff_username;
+	}
+
+	public void setStaff_username(String staff_username) {
+		this.staff_username = staff_username;
+	}
+
+	public String getStaff_password() {
+		return staff_password;
+	}
+
+	public void setStaff_password(String staff_password) {
+		this.staff_password = staff_password;
+	}
+
+	@OneToMany(mappedBy = "staffid", cascade = CascadeType.ALL)
     private Set<Followup> followups;
 
 	public int getStaff_id() {

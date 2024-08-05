@@ -22,8 +22,6 @@ public class BatchController {
 	
 	  @PostMapping("/api/addBatch") 
 	  public void saveBatch(@RequestBody Batch ref) {
-		  System.out.println("a");
-		  System.out.println(ref);
 	  service.save(ref); 
 	  }
 	 
