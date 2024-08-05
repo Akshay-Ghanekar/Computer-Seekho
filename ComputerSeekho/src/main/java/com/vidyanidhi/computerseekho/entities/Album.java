@@ -97,6 +97,7 @@ public class Album {
 		this.album_is_active = album_is_active;
 	}
 
+
 	public boolean isAlbum_is_active() {
 		return album_is_active;
 	}
@@ -104,6 +105,4 @@ public class Album {
 	public Album() {
 		super();
 	}
-
-	
 }
