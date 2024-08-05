@@ -27,7 +27,7 @@ public class Staff {
     private String staff_role;
 
     @Column(name = "staff_mobile")
-    private int staff_mobile;
+    private String staff_mobile;
 
     @Column(name = "staff_email")
     private String staff_email;
@@ -87,11 +87,11 @@ public class Staff {
 		this.staff_role = staff_role;
 	}
 
-	public int getStaff_mobile() {
+	public String getStaff_mobile() {
 		return staff_mobile;
 	}
 
-	public void setStaff_mobile(int staff_mobile) {
+	public void setStaff_mobile(String staff_mobile) {
 		this.staff_mobile = staff_mobile;
 	}
 
