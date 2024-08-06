@@ -58,5 +58,6 @@ public class CourseController {
 	 public void updateActive(@RequestBody Course course,@PathVariable int cid)
 	 {
 		manager.statusInactive(course.isCourse_is_active(),cid);
+		
 	 }
 }
