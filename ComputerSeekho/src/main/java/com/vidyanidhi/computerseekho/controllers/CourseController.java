@@ -16,7 +16,6 @@ import com.vidyanidhi.computerseekho.entities.Course;
 import com.vidyanidhi.computerseekho.services.CourseManager;
 
 @RestController
-@CrossOrigin("*")
 public class CourseController {
 	@Autowired 
 	CourseManager manager;
