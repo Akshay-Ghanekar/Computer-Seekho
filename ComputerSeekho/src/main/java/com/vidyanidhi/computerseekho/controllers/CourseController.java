@@ -50,6 +50,7 @@ public class CourseController {
 	 public void updatepro(@RequestBody Course course,@PathVariable int cid)
 	 {
 		manager.update(course,cid);
+		
 	 }
 	 
 	 
