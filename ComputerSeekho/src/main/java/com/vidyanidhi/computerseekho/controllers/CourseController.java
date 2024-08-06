@@ -25,6 +25,7 @@ public class CourseController {
 	 public List<Course> showCourses()
 	 {
 		  return manager.getCourses(); 
+		  
 		
 	 }
 	@GetMapping(value = "api/CourseById/{cid}")
