@@ -16,7 +16,7 @@ public class Video {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int video_id;
 
-    @Column(name = "video_url", nullable = false)
+    @Column(name = "video_url")
     private String video_url;
 
     @ManyToOne
