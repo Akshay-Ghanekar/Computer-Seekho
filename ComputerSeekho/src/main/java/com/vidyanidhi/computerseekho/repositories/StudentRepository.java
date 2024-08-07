@@ -17,20 +17,20 @@ import jakarta.transaction.Transactional;
 public interface StudentRepository extends JpaRepository<Student,Integer> {
 	
 	@Query("SELECT s FROM Student s WHERE s.student_name = :name")
-    List<Student> findByStudentName(@Param("name") String name);
+	List<Student> findByStudentName(String name);
+	
 	 Optional<Student> findById(int id);
+	 
 	 @Modifying
 	    @Transactional
-	    @Query("UPDATE Student s SET s.student_name = :name, s.student_address = :address, s.student_gender = :gender, " +
-	           "s.photo_url = :url, s.student_dob = :dob, s.student_qualification = :qualification, s.student_mobile = :mobile " +
-	           "WHERE s.student_id = :id")
+	    @Query("UPDATE Student s SET s.student_name = :name, s.student_address = :add, s.student_gender = :gender, s.photo_url = :url, s.student_dob = :date, s.student_qualification = :qual, s.student_mobile = :mob WHERE s.student_id = :id")
 	    void updateStudent(@Param("name") String name,
-	                       @Param("address") String address,
+	                       @Param("add") String address, 
 	                       @Param("gender") String gender,
-	                       @Param("url") String url,
-	                       @Param("dob") Date dob,
-	                       @Param("qualification") String qualification,
-	                       @Param("mobile") String mobile,
+	                       @Param("url") String photoUrl,
+	                       @Param("date") Date dob,
+	                       @Param("qual") String qualification, 
+	                       @Param("mob") String mobile,
 	                       @Param("id") int id);
 }
 

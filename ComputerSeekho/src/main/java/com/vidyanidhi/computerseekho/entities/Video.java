@@ -16,8 +16,13 @@ public class Video {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int video_id;
 
+
     @Column(name = "video_path", nullable = false)
     private String video_path;
+
+    @Column(name = "video_url")
+    private String video_url;
+//>>>>>>> branch 'subbranch' of https://github.com/swapnilD31/ComputerSeekho.git
 
     @ManyToOne 
     @JoinColumn(name = "album_id", referencedColumnName = "album_id")

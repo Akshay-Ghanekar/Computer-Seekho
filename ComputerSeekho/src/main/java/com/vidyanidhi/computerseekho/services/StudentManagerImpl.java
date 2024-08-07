@@ -11,7 +11,7 @@ import com.vidyanidhi.computerseekho.repositories.StudentRepository;
 @Service 
 public class StudentManagerImpl implements StudentManager {
 	@Autowired
-	private StudentRepository repository;
+	 StudentRepository repository;
 	@Override
 	public void addStudent(Student stud) {
 		repository.save(stud);
@@ -30,10 +30,10 @@ public class StudentManagerImpl implements StudentManager {
 	}
 
 	@Override
-    public void updateStudent(Student std, int id) {
-        repository.updateStudent(std.getStudent_name(), std.getStudent_address(), std.getStudent_gender(),
-                std.getPhoto_url(), std.getStudent_dob(), std.getStudent_qualification(),
-                std.getStudent_mobile(), id);
+	public void updateStudent(Student std, int id) {
+		repository.updateStudent(std.getStudent_name(),std.getStudent_address(),std.getStudent_gender(),
+								std.getPhoto_url(),std.getStudent_dob(),std.getStudent_qualification(),
+								std.getStudent_mobile(),id);
 	}
 	
 	public Optional<Student> getStudentById(int id) {

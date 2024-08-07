@@ -48,7 +48,7 @@ public class ImageController {
 		service.delete(imageid);
 	}
 
-	@PutMapping(value = "api/products/{imageid}")
+	@PutMapping(value = "api/image/{imageid}")
 	public void updatepro(@RequestBody Image image, @PathVariable int imageid) {
 		System.out.println("inside updatepro of controller");
 		service.update(image, imageid);

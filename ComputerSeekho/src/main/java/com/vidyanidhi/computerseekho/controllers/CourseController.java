@@ -16,7 +16,6 @@ import com.vidyanidhi.computerseekho.entities.Course;
 import com.vidyanidhi.computerseekho.services.CourseManager;
 
 @RestController
-@CrossOrigin("*")
 public class CourseController {
 	@Autowired 
 	CourseManager manager;
@@ -25,6 +24,7 @@ public class CourseController {
 	 public List<Course> showCourses()
 	 {
 		  return manager.getCourses(); 
+		  
 		
 	 }
 	@GetMapping(value = "api/CourseById/{cid}")
@@ -50,6 +50,7 @@ public class CourseController {
 	 public void updatepro(@RequestBody Course course,@PathVariable int cid)
 	 {
 		manager.update(course,cid);
+		
 	 }
 	 
 	 
@@ -57,5 +58,6 @@ public class CourseController {
 	 public void updateActive(@RequestBody Course course,@PathVariable int cid)
 	 {
 		manager.statusInactive(course.isCourse_is_active(),cid);
+		
 	 }
 }

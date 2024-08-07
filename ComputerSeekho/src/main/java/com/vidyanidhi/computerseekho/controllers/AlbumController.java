@@ -11,6 +11,7 @@ import com.vidyanidhi.computerseekho.services.AlbumManager;
 
 @RestController
 @CrossOrigin("*")
+
 public class AlbumController {
 	@Autowired
 	AlbumManager manager;
