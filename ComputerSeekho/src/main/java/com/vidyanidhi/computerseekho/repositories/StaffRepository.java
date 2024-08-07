@@ -24,5 +24,5 @@ public interface StaffRepository extends JpaRepository<Staff, Integer> {
                      @Param("role") String role, @Param("id") int id);
 	
 	@Query (value="SELECT * FROM Staff s WHERE s.staff_username = :username",nativeQuery=true)
-    Optional <Staff> findByUsername(@Param ("username") String username);
+    Staff findByUsername(@Param ("username") String username);
 }

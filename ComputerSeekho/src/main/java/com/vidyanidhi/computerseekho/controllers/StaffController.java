@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vidyanidhi.computerseekho.entities.Enquiry;
 import com.vidyanidhi.computerseekho.entities.Staff;
 import com.vidyanidhi.computerseekho.services.StaffManager;
 
@@ -19,7 +22,10 @@ import com.vidyanidhi.computerseekho.services.StaffManager;
 public class StaffController {
 	@Autowired
 	StaffManager manager;
-	
+	@GetMapping(value="api/getEnqbystaff/{id}")
+	   public List<Enquiry> getAllEnqForStaff(@PathVariable int id) {
+		return manager.getAllEnquiriesForStaff(id);
+	}	
 	@GetMapping(value = "api/staff")
 	public List <Staff > showStaff() {
 		return manager.getStaff();
@@ -34,11 +40,15 @@ public class StaffController {
 	}
 	
 	@GetMapping(value = "api/stafflog/{uname}")
-	public Optional<Staff> slogin(@PathVariable String uname) {
-
-		Optional<Staff> s = manager.stafflogin(uname);
-		return s;
+	public ResponseEntity<Staff> slogin(@PathVariable String uname) {
+	    Staff staff = manager.stafflogin(uname);
+	    if (staff != null) {
+	        return ResponseEntity.ok(staff);
+	    } else {
+	        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+	    }
 	}
+
 	
 	@PostMapping(value = "api/staff")
 	public void addStaff(@RequestBody Staff s) {

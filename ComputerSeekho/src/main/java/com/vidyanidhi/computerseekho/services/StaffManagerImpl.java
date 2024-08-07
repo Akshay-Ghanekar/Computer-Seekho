@@ -1,11 +1,13 @@
 package com.vidyanidhi.computerseekho.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vidyanidhi.computerseekho.entities.Enquiry;
 import com.vidyanidhi.computerseekho.entities.Staff;
 import com.vidyanidhi.computerseekho.repositories.StaffRepository;
 @Service 
@@ -47,9 +49,19 @@ public class StaffManagerImpl implements StaffManager {
 	}
 
 	@Override
-	public Optional<Staff> stafflogin(String name) {
+	public Staff stafflogin(String name) {
 		
 		return repository.findByUsername(name);
+	}
+	@Override
+	public List<Enquiry> getAllEnquiriesForStaff(int id) {
+		Optional<Staff> staffOptional = repository.findById(id);
+		if (staffOptional.isPresent()) {
+			Staff staff = staffOptional.get();
+			//return staff.getEnquiries();
+			return null;
+		}
+		return new ArrayList<>();// Return an empty list if staff not found
 	}
 
 }

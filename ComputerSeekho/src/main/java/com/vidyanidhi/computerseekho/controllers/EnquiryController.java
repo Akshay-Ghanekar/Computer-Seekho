@@ -80,8 +80,9 @@ public class EnquiryController
 
 	@GetMapping("api/getEnquiriesByStaffId/{staff_id}")
 	public List<Enquiry> getEnquiriesByStaffId(@PathVariable int staff_id) {
-		return enq.getEnquiriesByStaffId(staff_id);
+	    return enq.getEnquiriesByStaffId(staff_id);
 	}
+
 	
 	@PostMapping("api/updateprocessflag/{enquiryId}")
     public void updateEnquiry( @PathVariable int enquiryId) {

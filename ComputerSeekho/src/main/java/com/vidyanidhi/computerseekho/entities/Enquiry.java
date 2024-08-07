@@ -28,10 +28,10 @@ public class Enquiry {
     private String enquirerAddress;
 
     @Column(name = "enquirer_mobile")
-    private int enquirerMobile;
+    private String enquirerMobile;
 
     @Column(name = "enquirer_alternate_mobile")
-    private int enquirerAlternateMobile;
+    private String enquirerAlternateMobile;
 
     @Column(name = "enquirer_emailid")
     private String enquirerEmailId;
@@ -95,19 +95,19 @@ public class Enquiry {
 		this.enquirerAddress = enquirerAddress;
 	}
 
-	public int getEnquirerMobile() {
+	public String getEnquirerMobile() {
 		return enquirerMobile;
 	}
 
-	public void setEnquirerMobile(int enquirerMobile) {
+	public void setEnquirerMobile(String enquirerMobile) {
 		this.enquirerMobile = enquirerMobile;
 	}
 
-	public int getEnquirerAlternateMobile() {
+	public String getEnquirerAlternateMobile() {
 		return enquirerAlternateMobile;
 	}
 
-	public void setEnquirerAlternateMobile(int enquirerAlternateMobile) {
+	public void setEnquirerAlternateMobile(String enquirerAlternateMobile) {
 		this.enquirerAlternateMobile = enquirerAlternateMobile;
 	}
 
