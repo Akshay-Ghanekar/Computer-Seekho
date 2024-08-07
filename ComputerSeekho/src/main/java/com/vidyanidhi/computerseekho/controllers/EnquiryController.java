@@ -63,13 +63,13 @@ public class EnquiryController
 		return p;
 	}
 
-	/*
-	 * @PutMapping(value="api/update/{id}")
-	 * public void updatedata(@RequestBody Enquiry e,@PathVariable int id)
-	 * {
-	 * enq.update(e, id);
-	 * }
-	 */
+	
+//	  @PutMapping(value="api/update/{id}")
+//	  public void updatedata(@RequestBody Enquiry e,@PathVariable int id)
+//	  {
+//	  enq.update(e, id);
+//	  }
+//	 
 
 	@PutMapping("api/update_enquiry/{enquiryId}")
 	public void updateEnquiry(@PathVariable int enquiryId, @RequestBody Enquiry enquiry) {
@@ -80,9 +80,8 @@ public class EnquiryController
 
 	@GetMapping("api/getEnquiriesByStaffId/{staff_id}")
 	public List<Enquiry> getEnquiriesByStaffId(@PathVariable int staff_id) {
-	    return enq.getEnquiriesByStaffId(staff_id);
+		return enq.getEnquiriesByStaffId(staff_id);
 	}
-
 	
 	@PostMapping("api/updateprocessflag/{enquiryId}")
     public void updateEnquiry( @PathVariable int enquiryId) {

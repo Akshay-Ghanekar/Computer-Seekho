@@ -43,12 +43,12 @@ public class EnquiryManagerImpl implements EnquiryManager{
 
 	}
 
-	@Override
-	public void update(Enquiry enq, int id) {
-		erepository.updatedata(enq.getEnquirerName(),enq.getEnquirerMobile(),enq.getEnquirerEmailId(), enq.getEnquirerQuery(), enq.getClosureReason(),enq.isEnquiryProcessedFlag(),id);
-
-		
-	}
+//	@Override
+//	public void update(Enquiry enq, int id) {
+//		erepository.updatedata(enq.getEnquirerName(),enq.getEnquirerMobile(),enq.getEnquirerEmailId(), enq.getEnquirerQuery(), enq.getClosureReason(),enq.isEnquiryProcessedFlag(),id);
+//
+//		
+//	}
 
 	@Override
 	public List<Enquiry> getEnquiriesByStaffId(int staff_id) {
@@ -74,4 +74,5 @@ public class EnquiryManagerImpl implements EnquiryManager{
 	
 
 }
+
 
