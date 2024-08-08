@@ -18,6 +18,7 @@ public interface EnquiryManager {
 	public List<Enquiry> getEnquiriesByStaffId(int staff_id);
 	public void updateEnquiry(int enquiryId, Enquiry enquiry);
 	public void updateprocessflag(int id);
-
+	Optional<Enquiry> GetByMobile(String mobile);
+	
 
 }

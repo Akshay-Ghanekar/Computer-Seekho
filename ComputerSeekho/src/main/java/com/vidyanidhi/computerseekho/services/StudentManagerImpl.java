@@ -44,5 +44,6 @@ public class StudentManagerImpl implements StudentManager {
 	public List<Student> getStudentByName(String name) {
 		return repository.findByStudentName(name);
 	}
+	
 
 }

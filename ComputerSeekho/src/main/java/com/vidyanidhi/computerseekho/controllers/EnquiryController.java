@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,11 +44,11 @@ public class EnquiryController
 
 		enq.Formsubmit(enquiry);
 	}
-	// @DeleteMapping(value="/api/del_enquiry/{id}")
-	// public void DeleteById(@PathVariable int id)
-	// {
-	// enq.DeleteById(id);
-	// }
+	 @DeleteMapping(value="/api/del_enquiry/{id}")
+	 public void DeleteById(@PathVariable int id)
+	 {
+	 enq.DeleteById(id);
+	 }
 
 	@GetMapping(value = "api/getenq")
 	public List<Enquiry> GetAllList() {
@@ -57,10 +60,14 @@ public class EnquiryController
 		return enq.FindById(id);
 	}
 
-	@GetMapping(value = "api/getName/{name}")
+	@GetMapping(value = "api/getByName/{name}")
 	public Optional<Enquiry> GetByName(@PathVariable String name) {
-		Optional<Enquiry> p = enq.GetByName(name);
-		return p;
+	    return enq.GetByName(name);
+	}
+
+	@GetMapping(value = "api/getByMobile/{mobile}")
+	public Optional<Enquiry> GetByMobile(@PathVariable String mobile) {
+	    return enq.GetByMobile(mobile);
 	}
 
 	
@@ -89,6 +96,10 @@ public class EnquiryController
             enq.updateprocessflag(enquiryId);
             
     }
-
+	@PutMapping("api/updateEnquiryProcessedFlag/{enquiryId}")
+    public ResponseEntity<Void> updateEnquiryProcessedFlag(@PathVariable int enquiryId) {
+        enq.updateEnquiryProcessedFlag(enquiryId);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 }

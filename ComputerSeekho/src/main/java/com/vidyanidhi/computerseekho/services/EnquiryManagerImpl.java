@@ -70,6 +70,27 @@ public class EnquiryManagerImpl implements EnquiryManager{
 		
 	}
 
+	public void DeleteById(int id) {
+		erepository.deleteById(id);
+		
+	}
+
+	public void updateEnquiryProcessedFlag(int enquiryId) {
+        Optional<Enquiry> enquiryOpt = erepository.findById(enquiryId);
+        if (enquiryOpt.isPresent()) {
+            Enquiry enquiry = enquiryOpt.get();
+            enquiry.setEnquiryProcessedFlag(true);
+            erepository.save(enquiry);
+        } else {
+            // Log or handle the case where the enquiry is not found
+            System.out.println("Enquiry not found with id: " + enquiryId);
+        }
+    }
+
+	 @Override
+	    public Optional<Enquiry> GetByMobile(String mobile) {
+	        return erepository.findByMobile(mobile);
+	    }
 
 	
 
