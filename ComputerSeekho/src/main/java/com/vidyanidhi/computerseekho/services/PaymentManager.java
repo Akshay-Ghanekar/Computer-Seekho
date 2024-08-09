@@ -7,7 +7,7 @@ import com.vidyanidhi.computerseekho.entities.Payment;
 import com.vidyanidhi.computerseekho.entities.Video;
 
 public interface PaymentManager {
-	void addPaymet(Payment payment);
+	void addPayment(Payment payment);
 	void DeletePayment(int id);
 	List<Payment> GetAllPayment();
 	Optional<Payment> getPayment(int id);

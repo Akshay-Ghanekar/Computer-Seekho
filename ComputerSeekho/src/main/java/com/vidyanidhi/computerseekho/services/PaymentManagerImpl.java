@@ -16,8 +16,11 @@ public class PaymentManagerImpl implements PaymentManager {
 	@Autowired
 	PaymentRepository repository;
 	@Override
-	public void addPaymet(Payment payment) {
-		repository.save(payment);
+	public void addPayment(Payment payment) {
+		 if (!repository.existsById(payment.getStudent().getStudent_id())) {
+		        throw new IllegalArgumentException("Invalid student ID: " + payment.getStudent().getStudent_id());
+		    }
+		    repository.save(payment);
 
 	}
 
@@ -37,5 +40,6 @@ public class PaymentManagerImpl implements PaymentManager {
 	public Optional<Payment> getPayment(int id) {
 		return repository.findById(id);
 	}
+
 
 }

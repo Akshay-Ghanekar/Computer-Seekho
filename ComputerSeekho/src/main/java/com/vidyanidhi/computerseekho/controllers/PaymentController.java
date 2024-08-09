@@ -33,7 +33,7 @@ public class PaymentController {
 	
 	@PostMapping("api/addPayment")
 	public void AddPayment(@RequestBody Payment payment) {
-		manager.addPaymet(payment);
+		manager.addPayment(payment);
 	}
 	
 	@DeleteMapping("api/deletePaymentbyID/{ID}")

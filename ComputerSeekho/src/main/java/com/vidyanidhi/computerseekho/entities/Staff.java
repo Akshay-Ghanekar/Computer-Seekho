@@ -62,6 +62,9 @@ public class Staff {
 
 	@OneToMany(mappedBy = "staffid", cascade = CascadeType.ALL)
     private Set<Followup> followups;
+	
+	@OneToMany(mappedBy = "staffId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Enquiry> enquiries;
 
 	public int getStaff_id() {
 		return staff_id;
