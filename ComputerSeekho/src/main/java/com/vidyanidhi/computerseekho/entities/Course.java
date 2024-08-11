@@ -1,5 +1,8 @@
 package com.vidyanidhi.computerseekho.entities;
 
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -41,6 +45,9 @@ public class Course {
     @ManyToOne
     @JoinColumn(name = "video_id", referencedColumnName ="video_id")
     private Video video_id;
+    
+    @OneToMany(mappedBy = "courseId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Enquiry> enquiries;
 
 	public int getCourse_id() {
 		return course_id;

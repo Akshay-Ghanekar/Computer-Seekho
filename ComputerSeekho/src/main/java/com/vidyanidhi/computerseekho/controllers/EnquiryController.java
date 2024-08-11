@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vidyanidhi.computerseekho.entities.Enquiry;
+import com.vidyanidhi.computerseekho.entities.Staff;
+import com.vidyanidhi.computerseekho.repositories.StaffRepository;
 import com.vidyanidhi.computerseekho.services.EnquiryManagerImpl;
 
 @RestController
@@ -44,6 +46,7 @@ public class EnquiryController
 
 		enq.Formsubmit(enquiry);
 	}
+	
 	 @DeleteMapping(value="/api/del_enquiry/{id}")
 	 public void DeleteById(@PathVariable int id)
 	 {

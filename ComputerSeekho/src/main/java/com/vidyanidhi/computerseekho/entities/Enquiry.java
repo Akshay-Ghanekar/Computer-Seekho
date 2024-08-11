@@ -43,10 +43,6 @@ public class Enquiry {
     @Column(name = "enquirer_query")
     private String enquirerQuery;
 
-    @ManyToOne
-    @JoinColumn(name="closure_reason_id", referencedColumnName ="closure_reason_id")
-    private ClosureReasonMaster closureReasonID;
-
     @Column(name="closure_reason")
     private String closureReason;
 
@@ -56,7 +52,7 @@ public class Enquiry {
     @ManyToOne
     @JoinColumn(name="course_id", referencedColumnName ="course_id")
     private Course courseId;
-
+    
     @ManyToOne
     @JoinColumn(name="staff_id",referencedColumnName ="staff_id")
     private Staff staffId;
@@ -135,13 +131,7 @@ public class Enquiry {
 		this.enquirerQuery = enquirerQuery;
 	}
 
-	public ClosureReasonMaster getClosureReasonID() {
-		return closureReasonID;
-	}
 
-	public void setClosureReasonID(ClosureReasonMaster closureReasonID) {
-		this.closureReasonID = closureReasonID;
-	}
 
 	public String getClosureReason() {
 		return closureReason;

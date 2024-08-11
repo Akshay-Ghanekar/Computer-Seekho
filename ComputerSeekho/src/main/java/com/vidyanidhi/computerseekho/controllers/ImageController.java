@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ import com.vidyanidhi.computerseekho.entities.Image;
 import com.vidyanidhi.computerseekho.services.ImageManager;
 
 @RestController
-@CrossOrigin("http://127.0.0.1:*")
+@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 public class ImageController {
 	@Autowired
 	ImageManager service;
@@ -37,10 +38,11 @@ public class ImageController {
 	}
 
 	@PostMapping(value = "api/addImage")
-	public void addpro(@RequestBody Image image) {
+	public ResponseEntity<Image> addpro(@RequestBody Image image) {
 		System.out.println("Post Mapping: addImage");
 		// manager.addProduct(product);
 		service.insert(image);
+		return ResponseEntity.ok(image);
 	}
 
 	@DeleteMapping(value = "api/image/{imageid}")
@@ -53,5 +55,9 @@ public class ImageController {
 		System.out.println("inside updatepro of controller");
 		service.update(image, imageid);
 	}
-
+	@GetMapping(value = "api/imagesByAlbum/{albumId}")
+    public List<Image> getImagesByAlbumId(@PathVariable int albumId) {
+        System.out.println("Get Mapping : getImagesByAlbumId");
+        return service.findImagesByAlbumId(albumId);
+    }
 }

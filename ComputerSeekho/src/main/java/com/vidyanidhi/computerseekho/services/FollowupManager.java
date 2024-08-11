@@ -7,7 +7,7 @@ import com.vidyanidhi.computerseekho.entities.Followup;
 
 
 public interface FollowupManager {
-	public void Add(Followup follow);
+	void addFollowup(Followup followup);
 	public List<Enquiry> GetAllFollowUp();
 	public List<Enquiry> GetFollowUpByStaffId(int staffid);
 

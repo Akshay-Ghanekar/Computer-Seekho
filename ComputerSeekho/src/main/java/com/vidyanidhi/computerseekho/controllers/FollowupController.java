@@ -31,11 +31,10 @@ public class FollowupController
 		return folloup.GetFollowUpByStaffId(id);
 	}
 	
-	@PostMapping(value = "api/followup/")
-	public void add(@RequestBody Followup follow)
-	{
-		folloup.Add(follow);
-	}
+	 @PostMapping(value = "api/followup")
+	    public void addFollowup(@RequestBody Followup followup) {
+	        folloup.addFollowup(followup);
+	    }
 
 }
 

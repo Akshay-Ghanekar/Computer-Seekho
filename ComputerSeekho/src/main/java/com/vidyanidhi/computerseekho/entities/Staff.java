@@ -2,9 +2,12 @@ package com.vidyanidhi.computerseekho.entities;
 
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -60,11 +63,14 @@ public class Staff {
 		this.staff_password = staff_password;
 	}
 
-	@OneToMany(mappedBy = "staffid", cascade = CascadeType.ALL)
-    private Set<Followup> followups;
-	
-	@OneToMany(mappedBy = "staffId", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Enquiry> enquiries;
+	@OneToMany(mappedBy = "staffid", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JsonIgnore
+	private Set<Followup> followups;
+
+	@OneToMany(mappedBy = "staffId", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+	@JsonIgnore
+	private Set<Enquiry> enquiries;
+
 
 	public int getStaff_id() {
 		return staff_id;
