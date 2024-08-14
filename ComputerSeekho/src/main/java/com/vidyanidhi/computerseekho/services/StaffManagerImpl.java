@@ -5,23 +5,37 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.vidyanidhi.computerseekho.entities.Enquiry;
 import com.vidyanidhi.computerseekho.entities.Staff;
 import com.vidyanidhi.computerseekho.repositories.StaffRepository;
+
+import jakarta.annotation.PostConstruct;
 @Service 
 public class StaffManagerImpl implements StaffManager {
 
 	@Autowired
 	StaffRepository  repository;
 	
+	private BCryptPasswordEncoder passwordEncoder= new BCryptPasswordEncoder();
 	
 	@Override
 	public void addStaff(Staff s) {
+		s.setStaff_password(passwordEncoder.encode(s.getStaff_password()));
 		repository.save(s);
 		
 	}
+	@PostConstruct
+    public void updatePasswords() {
+        List<Staff> staffList = repository.findAll();
+        for (Staff staff : staffList) {
+            String encodedPassword = passwordEncoder.encode(staff.getStaff_password());
+            staff.setStaff_password(encodedPassword);
+            repository.save(staff);
+        }
+    }
 
 	@Override
 	public List<Staff> getStaff() {
