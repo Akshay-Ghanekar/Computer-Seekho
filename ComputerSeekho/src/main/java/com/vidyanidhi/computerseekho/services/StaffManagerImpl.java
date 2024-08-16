@@ -27,15 +27,15 @@ public class StaffManagerImpl implements StaffManager {
 		repository.save(s);
 		
 	}
-	@PostConstruct
-    public void updatePasswords() {
-        List<Staff> staffList = repository.findAll();
-        for (Staff staff : staffList) {
-            String encodedPassword = passwordEncoder.encode(staff.getStaff_password());
-            staff.setStaff_password(encodedPassword);
-            repository.save(staff);
-        }
-    }
+//	@PostConstruct
+//    public void updatePasswords() {
+//        List<Staff> staffList = repository.findAll();
+//        for (Staff staff : staffList) {
+//            String encodedPassword = passwordEncoder.encode(staff.getStaff_password());
+//            staff.setStaff_password(encodedPassword);
+//            repository.save(staff);
+//        }
+//    }
 
 	@Override
 	public List<Staff> getStaff() {
