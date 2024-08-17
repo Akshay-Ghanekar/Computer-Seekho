@@ -1,5 +1,8 @@
 package com.vidyanidhi.computerseekho.entities;
 
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,12 +20,20 @@ public class Video {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int video_id;
 
+
     @Column(name = "video_path", nullable = false)
     private String video_path;
 
-    @ManyToOne
+    @Column(name = "video_url")
+    private String video_url;
+//>>>>>>> branch 'subbranch' of https://github.com/swapnilD31/ComputerSeekho.git
+
+    @ManyToOne 
     @JoinColumn(name = "album_id", referencedColumnName = "album_id")
     private Album album_id;
+    
+    @OneToMany(mappedBy = "video_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Course> course ;
 
     @Column(name = "is_album_cover")
     private boolean is_album_cover;

@@ -17,5 +17,5 @@ public interface ImageManager {
 	void delete(int id);
 
 	void update(Image image, int imageid);
-
+	List<Image> findImagesByAlbumId(int albumId);
 }

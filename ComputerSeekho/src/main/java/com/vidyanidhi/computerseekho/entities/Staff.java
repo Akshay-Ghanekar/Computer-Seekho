@@ -2,9 +2,12 @@ package com.vidyanidhi.computerseekho.entities;
 
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,18 +23,54 @@ public class Staff {
 
     @Column(name = "staff_name")
     private String staff_name;
+    
+    private String photo_url;
 
     @Column(name = "staff_role")
     private String staff_role;
 
     @Column(name = "staff_mobile")
-    private int staff_mobile;
+    private String staff_mobile;
 
     @Column(name = "staff_email")
     private String staff_email;
+    
+    private String staff_username;
+	private String staff_password;
 
-    @OneToMany(mappedBy = "staffid", cascade = CascadeType.ALL)
-    private Set<Followup> followups;
+
+    public String getPhoto_url() {
+		return photo_url;
+	}
+
+	public void setPhoto_url(String photo_url) {
+		this.photo_url = photo_url;
+	}
+
+	public String getStaff_username() {
+		return staff_username;
+	}
+
+	public void setStaff_username(String staff_username) {
+		this.staff_username = staff_username;
+	}
+
+	public String getStaff_password() {
+		return staff_password;
+	}
+
+	public void setStaff_password(String staff_password) {
+		this.staff_password = staff_password;
+	}
+
+	@OneToMany(mappedBy = "staffid", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JsonIgnore
+	private Set<Followup> followups;
+
+	@OneToMany(mappedBy = "staffId", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+	@JsonIgnore
+	private Set<Enquiry> enquiries;
+
 
 	public int getStaff_id() {
 		return staff_id;
@@ -57,11 +96,11 @@ public class Staff {
 		this.staff_role = staff_role;
 	}
 
-	public int getStaff_mobile() {
+	public String getStaff_mobile() {
 		return staff_mobile;
 	}
 
-	public void setStaff_mobile(int staff_mobile) {
+	public void setStaff_mobile(String staff_mobile) {
 		this.staff_mobile = staff_mobile;
 	}
 

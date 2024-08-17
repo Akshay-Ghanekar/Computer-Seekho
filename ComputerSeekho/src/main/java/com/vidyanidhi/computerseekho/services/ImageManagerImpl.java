@@ -45,6 +45,10 @@ public class ImageManagerImpl implements ImageManager {
 
 	}
 
+	@Override
+    public List<Image> findImagesByAlbumId(int albumId) {
+        return i_repository.findByAlbumId(albumId);
+    }
 //		@Override
 //		public void update(Image image, int imageid) 
 //		{

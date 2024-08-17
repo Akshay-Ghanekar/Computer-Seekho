@@ -14,10 +14,11 @@ public interface EnquiryManager {
 	public List<Enquiry> GetAll();
 	public Optional<Enquiry> FindById(@PathVariable int id);
 	public Optional<Enquiry> GetByName(String name);
-	public void update(Enquiry e,int id);
+//	public void update(Enquiry e,int id);
 	public List<Enquiry> getEnquiriesByStaffId(int staff_id);
 	public void updateEnquiry(int enquiryId, Enquiry enquiry);
 	public void updateprocessflag(int id);
-
+	Optional<Enquiry> GetByMobile(String mobile);
+	
 
 }
